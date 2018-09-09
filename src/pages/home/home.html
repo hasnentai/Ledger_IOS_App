@@ -1,14 +1,69 @@
-<ion-header>
+<ion-header no-border >
   <ion-navbar>
+    <ion-buttons start>
+      <button ion-button class="btn-left" icon-only (click)="openModal()">
+        <ion-icon name="ios-person-add" color="lightDark"></ion-icon>
+      </button>
+
+    </ion-buttons>
     <ion-title>
-      Ionic Blank
+      DashBoard
     </ion-title>
+    <ion-buttons end>
+      <button class="btn-right" ion-button icon-only (click)="openModal()">
+        <ion-icon name="ios-search" color="lightDark"></ion-icon>
+      </button>
+      <button class="btn-right" ion-button icon-only (click)="openModal()">
+        <ion-icon name="ios-settings" color="lightDark"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="bg-content">
+  <ion-card>
+    <ion-card-header>
+      Current A/C
+    </ion-card-header>
+    <ion-card-content>
+      <p class="main-card">
+        <img class="indian-rupee" src="../assets/imgs/rupee-indian.png"> 500
+      </p>
+      <img class="indian-rupee-bigger" src="../assets/imgs/rupee-indian.png">
+
+    </ion-card-content>
+  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <button ion-button class="btn" full large>Debit / -</button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button class="btn1" full large>Credit / +</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card class="card-list">
+    <ion-card-header>
+      Debit / -
+      <span class="total-left" text-right>1200
+        <img src="../../assets/imgs/rupee-indian (1).png" class="black-rupee">Total</span>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-list *ngFor="let item of names">
+            <ion-item>
+              <ion-avatar item-start class="avater">
+                <p style="text-transform:uppercase" >{{item.name | slice:0:1}}</p>
+              </ion-avatar>
+              <h2 style="display:inline-flex;text-transform:capitalize">{{item.name}}</h2>
+              <span class="total-left" text-right>{{item.amoutn}}
+                  <img src="../../assets/imgs/rupee-indian (1).png" class="black-rupee"></span>
+                  <p>{{item.date}}</p>
+            </ion-item>
+          </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-fab right bottom>
+      <button ion-fab color="primary"><ion-icon name="ios-add"></ion-icon></button>
+    </ion-fab>
 </ion-content>

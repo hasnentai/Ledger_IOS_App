@@ -38,7 +38,8 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  lightDark: #2e4c6a
 );
 
 
@@ -86,3 +87,34 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+@font-face {
+  font-family: Helvetica;
+  src: url("../../assets/fonts/HelveticaNeue Light.ttf") format("ttf");
+  }
+ 
+
+  h1,h2,h3,h4,h5,h6,p{
+    font-family: Helvetica !important;
+  }
+
+  .toolbar-title-ios{
+    color: #2e4c6a!important;
+    font-size: 1.7em!important;
+    text-align: center!important;
+  }
+
+  .bg-content{
+    font-family: Helvetica !important;
+    background-color: #F4F9FE!important ;
+  }
+  .avater{
+    background-color: #2e4c6a;
+    border-radius: 50%;
+    position: relative;
+  }  
+  .fab-ios-primary{
+    box-shadow: 0px 3px 10px #0000009e;
+  }
+
+
+  
