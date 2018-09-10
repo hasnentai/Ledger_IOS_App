@@ -1,7 +1,7 @@
 <ion-header no-border >
-  <ion-navbar>
+  <ion-navbar transparent>
     <ion-buttons start>
-      <button ion-button class="btn-left" icon-only (click)="openModal()">
+      <button ion-button class="btn-left" icon-only [navPush]="addAccount">
         <ion-icon name="ios-person-add" color="lightDark"></ion-icon>
       </button>
 
@@ -10,7 +10,7 @@
       DashBoard
     </ion-title>
     <ion-buttons end>
-      <button class="btn-right" ion-button icon-only (click)="openModal()">
+      <button class="btn-right" ion-button icon-only [navPush]="allAccounts">
         <ion-icon name="ios-eye" color="lightDark"></ion-icon>
       </button>
       <button class="btn-right" ion-button icon-only (click)="openModal()">
@@ -36,10 +36,10 @@
   <ion-grid>
     <ion-row>
       <ion-col col-6>
-        <button ion-button class="btn" full large>Debit / -</button>
+        <button ion-button class="btn" full >Debit / -</button>
       </ion-col>
       <ion-col col-6>
-        <button ion-button class="btn1" full large>Credit / +</button>
+        <button ion-button class="btn1" full >Credit / +</button>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -64,6 +64,6 @@
     </ion-card-content>
   </ion-card>
   <ion-fab right bottom>
-      <button ion-fab color="primary"><ion-icon name="ios-add"></ion-icon></button>
+      <button ion-fab color="primary" [navPush]="newTransaction"><ion-icon name="ios-add"></ion-icon></button>
     </ion-fab>
 </ion-content>

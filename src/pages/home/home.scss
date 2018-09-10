@@ -46,6 +46,7 @@ page-home {
     }
     .card-list {
         background-color: #fff;
+        min-height: 300px;
     }
     .card-list .card-header {
         color: #2e4c6a !important;
@@ -72,5 +73,20 @@ page-home {
         /* right: 0; */
         transform: translate(-50%, -50%);
         color: #fff;
+    }
+    ion-fab[bottom] {
+        bottom: 15px;
+        right: 30px!important;
+    }
+    .fab{
+        height:65px!important;;
+        width:65px!important;;
+    }
+    .fab ion-icon {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        font-size: 4rem!important;
     }
 }

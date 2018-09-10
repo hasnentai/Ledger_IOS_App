@@ -99,7 +99,7 @@ $colors: (
 
   .toolbar-title-ios{
     color: #2e4c6a!important;
-    font-size: 1.7em!important;
+    font-size: 1.3em!important;
     text-align: center!important;
   }
 
@@ -115,6 +115,19 @@ $colors: (
   .fab-ios-primary{
     box-shadow: 0px 3px 10px #0000009e;
   }
+  .text-input{
+    border-bottom: 1px solid  #2e4c6a!important;
+  }
+  .full-btn{
+    border-radius: 5px!important;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.36) !important;
+  }
+
+  .back-button-md,
+.back-button-ios {
+  color: #2e4c6a!important;
+}
+
 
 
   
