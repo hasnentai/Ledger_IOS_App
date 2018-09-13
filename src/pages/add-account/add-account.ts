@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SQLite, SQLiteObject } from "@ionic-native/sqlite";
+import { ToastController } from 'ionic-angular';
 
 /**
  * Generated class for the AddAccountPage page.
@@ -16,15 +17,23 @@ import { SQLite, SQLiteObject } from "@ionic-native/sqlite";
 })
 export class AddAccountPage {
   accountData={
-    account_name : '',
-    account_phone : '',
-    account_dec : ''
+    account_dec :'',
+    account_phone:'',
+    account_name :''
   }
   accountName= this.accountData.account_name;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public sqlite :SQLite) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public sqlite :SQLite,public toastCtrl: ToastController) {
+  }
+  presentToast(msg) {
+    const toast = this.toastCtrl.create({
+      message: msg,
+      duration: 3000,
+      position: 'top'
+    });
+    toast.present();
   }
   logForm(){
-    alert(JSON.stringify(this.accountData.account_name));
+    console.log(JSON.stringify(this.accountData.account_name));
     this.pushData();
   }
 
@@ -41,10 +50,13 @@ export class AddAccountPage {
       })
       .then((db: SQLiteObject) => {
         db.executeSql(
-          "INSERT INTO new_account (aname,phone,descritpion) VALUES(?,?,?)",[this.accountData.account_name,this.accountData.account_phone,this.accountData.account_dec]
+          "INSERT INTO myaccount (aname,phone,descritpion) VALUES(?,?,?)",[this.accountData.account_name,this.accountData.account_phone,this.accountData.account_dec]
         )
-          .then(() => alert("Executed SQL"))
-          .catch(e => alert(JSON.stringify(e)));
+          .then(() => {console.log("Executed SQL")
+        this.presentToast('User was added successfully')
+        
+        })
+          .catch(e => console.log(JSON.stringify(e)));
       });
   }
 

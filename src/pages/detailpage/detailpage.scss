@@ -1,0 +1,71 @@
+page-detailpage {
+    .btn-right {
+        padding-right: 15px !important;
+        font-family: Helvetica !important;
+    }
+    .avater p {
+        position: absolute;
+        top: 50%;
+        /* bottom: 0; */
+        left: 50%;
+        /* right: 0; */
+        transform: translate(-50%, -50%);
+        color: #fff;
+    }
+    .card-header {
+        font-size: 2rem !important;
+        color: #fff;
+    }
+    .card {
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.36) !important;
+        color: #2e4c6a;
+        border-radius: 20px;
+        position: relative;
+    }
+    .card-list {
+        background-color: #fff;
+        min-height: 300px;
+    }
+    .card-list .card-header {
+        color: #2e4c6a !important;
+    }
+    .name-diaplay {
+        height: 30%;
+        width: 100%;
+        position: relative;
+        background-color: #2e4c6a;
+    }
+    .amount-display{
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #2e4c6a;
+    }
+    .inner-name-display {
+        height: 90px;
+        width: 90px;
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        color: #2e4c6a;
+        background-color: #fff;
+    }
+    .inner-name-display p {
+        color: #2e4c6a;
+        position: relative;
+        text-align: center;
+        font-size: 28px;
+        text-transform: uppercase;
+        font-weight: lighter;
+    }
+    .back-button-md,
+    .back-button-ios {
+        color: #fff !important;
+    }
+    .toolbar-title-ios {
+        color: #fff !important;
+    }
+}

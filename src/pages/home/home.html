@@ -1,4 +1,4 @@
-<ion-header no-border >
+<ion-header no-border>
   <ion-navbar transparent>
     <ion-buttons start>
       <button ion-button class="btn-left" icon-only [navPush]="addAccount">
@@ -10,10 +10,10 @@
       DashBoard
     </ion-title>
     <ion-buttons end>
-      <button class="btn-right" ion-button icon-only [navPush]="allAccounts">
-        <ion-icon name="ios-eye" color="lightDark"></ion-icon>
+      <button class="" ion-button icon-only [navPush]="allAccounts">
+        <ion-icon name="ios-people" color="lightDark"></ion-icon>
       </button>
-      <button class="btn-right" ion-button icon-only (click)="openModal()">
+      <button class="btn-right" ion-button icon-only [navPush]="settings">
         <ion-icon name="ios-settings" color="lightDark"></ion-icon>
       </button>
     </ion-buttons>
@@ -27,43 +27,55 @@
     </ion-card-header>
     <ion-card-content>
       <p class="main-card">
-        <img class="indian-rupee" src="../assets/imgs/rupee-indian.png"> 500
+        <span class="indian-rupee"> </span>{{allTotal | number}}
       </p>
-      <img class="indian-rupee-bigger" src="../assets/imgs/rupee-indian.png">
+      <span class="indian-rupee-bigger"></span>
 
     </ion-card-content>
   </ion-card>
   <ion-grid>
     <ion-row>
       <ion-col col-6>
-        <button ion-button class="btn" full >Debit / -</button>
+        <button ion-button class="btn" full (click)="getDebitData()">Debit / -</button>
       </ion-col>
       <ion-col col-6>
-        <button ion-button class="btn1" full >Credit / +</button>
+        <button ion-button class="btn1" full (click)="getCreditData()">Credit / +</button>
       </ion-col>
     </ion-row>
   </ion-grid>
   <ion-card class="card-list">
     <ion-card-header>
-      Debit / -
-      <span class="total-left" text-right>1200
-        <img src="../../assets/imgs/rupee-indian (1).png" class="black-rupee">Total</span>
+      {{currentTab}} / -
+      <span class="total-left" text-right>{{total | number}}
+        <span class="black-rupee"></span>
+        Total</span>
     </ion-card-header>
     <ion-card-content>
-        <ion-list *ngFor="let item of names">
-            <ion-item>
-              <ion-avatar item-start class="avater">
-                <p style="text-transform:uppercase" >{{item.name | slice:0:1}}</p>
-              </ion-avatar>
-              <h2 style="display:inline-flex;text-transform:capitalize">{{item.name}}</h2>
-              <span class="total-left" text-right>{{item.amoutn}}
-                  <img src="../../assets/imgs/rupee-indian (1).png" class="black-rupee"></span>
-                  <p>{{item.date}}</p>
-            </ion-item>
-          </ion-list>
+      <p *ngIf="empty" text-center>{{msg}}</p>
+      <ion-list *ngFor="let item of results">
+        <ion-item (click)="nextPage(item.id,item.name,item.phone,item.amount)">
+          <ion-avatar item-start class="avater">
+            <p style="text-transform:uppercase">{{item.name | slice:0:1}}</p>
+          </ion-avatar>
+          <h2 style="display:inline-flex;text-transform:capitalize">{{item.name}}</h2>
+          <span class="total-left" text-right>{{item.amount | number}}
+            <span class="black-rupee"></span>
+          </span>
+          <p>{{item.date | date}}</p>
+          <p>{{descritpion}}</p>
+        </ion-item>
+      </ion-list>
     </ion-card-content>
   </ion-card>
   <ion-fab right bottom>
-      <button ion-fab color="primary" [navPush]="newTransaction"><ion-icon name="ios-add"></ion-icon></button>
-    </ion-fab>
+    <button ion-fab color="lightDark" (click)="addTransactionPage()">
+      <ion-icon name="ios-add"></ion-icon>
+    </button>
+  </ion-fab>
+  
 </ion-content>
+<div class=" cover">
+    <div class="clip">
+        <ion-icon name="ios-person-add" class="myicon" color="lightDark"></ion-icon>
+    </div>
+</div>

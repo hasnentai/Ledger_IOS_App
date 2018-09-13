@@ -1,4 +1,48 @@
+.indian-rupee-bigger:after{
+    content:"\20B9"!important
+}
+.indian-rupee:after{
+    content:"\20B9"!important
+}
+.black-rupee:after{
+    content:"\20B9"!important
+}
+
+
 page-home {
+    .myicon{
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 90px;
+        transition:all 0.5s ease-in
+    }
+    .clip{
+        -webkit-clip-path: circle(50% at 51% 50%);
+        clip-path: circle(50% at 51% 50%);
+        height: 150px;
+        width: 150px;
+        background-color: #fff;
+        position: absolute;
+        top:4.5%;
+        left:2%
+
+    }
+    .cover{
+        opacity: 0;
+        transition:all 0.5s ease-in
+    }
+    .overlay{
+        height: 100%;
+        width: 100%;
+        top:0;
+        background-color: #2e4c6ac4;
+        position: fixed;
+        z-index: 999;
+        opacity: 1!important;
+        transition:all 0.5s ease-in
+    }
     .card-header {
         font-size: 2rem !important;
         color: #fff;
@@ -11,9 +55,9 @@ page-home {
         position: relative;
     }
     .indian-rupee {
-        height: 50px;
-        width: 50px;
-        display: inline-block;
+        padding-right: 10px;
+        font-size: 1.2em;
+        font-weight: 500
     }
     .card .main-card {
         font-size: 3.8em !important;
@@ -21,21 +65,23 @@ page-home {
     }
     .indian-rupee-bigger {
         position: absolute;
-        top: 0px;
-        right: -33px;
-        height: 170px;
-        width: 170px;
-        opacity: 0.6;
+        top: -73px;
+        right: -9px;
+        font-size: 16em;
+        opacity: 0.3;
+        font-weight: 600;
+        
     }
+
     .btn {
         box-shadow: 0 3px 12px rgba(0, 0, 0, 0.36) !important;
         border-radius: 5px;
-        background-color: #48C9E0;
+        background-color: rgb(98, 190, 106);
     }
     .btn1 {
         box-shadow: 0 3px 12px rgba(0, 0, 0, 0.36) !important;
         border-radius: 5px;
-        background-color: #D15EDB;
+        background-color: rgb(224, 72, 79);
     }
     .btn-right {
         padding-right: 15px !important;
@@ -61,9 +107,11 @@ page-home {
         display: inline-flex;
     }
     .black-rupee {
-        height: 20px;
-        width: 20px;
-        margin-left: 7px;
+        font-size: 2rem !important;
+        margin-top:-3px;
+        margin-right: 2px;
+        padding-left: 10px;
+        
     }
        .avater p {
         position: absolute;

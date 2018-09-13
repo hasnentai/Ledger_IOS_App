@@ -22,16 +22,16 @@
       <form (ngSubmit)="logForm()">
         <ion-list>
           <ion-item>
-            <ion-label stacked>Account Name</ion-label>
+            <ion-label floating>Account Name</ion-label>
             <ion-input type="text" [(ngModel)]="accountData.account_name" name="account_name" required></ion-input>
           </ion-item>
 
           <ion-item>
-            <ion-label stacked>Phone Number</ion-label>
-            <ion-input type="number" [(ngModel)]="accountData.account_phone" name="account_phone" required></ion-input>
+            <ion-label floating>Phone Number</ion-label>
+            <ion-input type="tel" [(ngModel)]="accountData.account_phone" name="account_phone" required></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label stacked>Description</ion-label>
+            <ion-label floating>Description</ion-label>
             <ion-input type="text" [(ngModel)]="accountData.account_dec" name="account_dec" required></ion-input>
           </ion-item>
           <button ion-button full color="lightDark" class="full-btn">Save Account</button>

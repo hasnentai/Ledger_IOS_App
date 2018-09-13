@@ -1,0 +1,59 @@
+<!--
+  Generated template for the DetailpagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+
+  <ion-navbar color="lightDark">
+    <ion-title style="text-transform:capitalize;">{{userName}}</ion-title>
+    <ion-buttons end>
+      <button class="btn-right" ion-button icon-only (click)="makeCall(phone);">
+        <ion-icon ios="ios-call" color="light"></ion-icon>
+      </button>
+
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="name-diaplay">
+    <div class="inner-name-display">
+      <p>{{userName | slice:0:1}}</p>
+    </div>
+    <p class="amount-display" *ngIf="disRupee">
+      <ion-chip #chip2>
+        <ion-icon  color="light">&#x20B9;</ion-icon>
+        <ion-label style="color:#fff;">{{amount | number}} {{active}}</ion-label>
+      </ion-chip>
+    </p>
+  </div>
+  <ion-card class="card-list">
+    <ion-card-header style="text-transform:capitalize;">
+      Transactions of {{userName}} 
+    </ion-card-header>
+    <ion-card-content>
+      <p *ngIf="empty">{{msg}}</p>
+      <ion-list *ngFor="let item of results">
+
+        <ion-item>
+          <ion-avatar item-start class="avater">
+            <p style="text-transform:uppercase">{{item.trans | slice:0:1}}</p>
+          </ion-avatar>
+          <h2 style="display:inline-flex;text-transform:capitalize">{{item.amount | number}}</h2>
+          <p>{{item.date | date}}</p>
+          <p [ngStyle]="{'color': item.trans === 'Dr'? 'red' : 'green'}" item-end> {{item.trans}}</p>
+          <p>{{item.date | date}}</p>
+
+        </ion-item>
+
+
+      </ion-list>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
